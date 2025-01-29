@@ -1,0 +1,1 @@
+probando vim dentro del mismo git bash
