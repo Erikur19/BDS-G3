@@ -1,0 +1,3 @@
+#Configurar git
+##Git config --global user.name "Nombre"
+###Git config --global user.email "Correo"
