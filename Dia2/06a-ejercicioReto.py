@@ -1,8 +1,12 @@
 ## IMPRIMIENDO TÍTULO
 print ("=============== CONVERSOR DE DIVISAS ==================")
+
+## Variables y constantes
 respuesta = "SI"
 TC_COMPRA = 3.6
 TC_VENTA = 3.7
+
+##Bucle
 while (respuesta == "SI"):
     tipo = int(input("""¿Qué desea convertir? 
                      1) SOLES A DÓLARES
