@@ -1,7 +1,8 @@
 ## IMPRIMIENDO TÍTULO
 print ("=============== CONVERSOR DE DIVISAS ==================")
 respuesta = "SI"
-TC = 3.6
+TC_COMPRA = 3.6
+TC_VENTA = 3.7
 while (respuesta == "SI"):
     tipo = int(input("""¿Qué desea convertir? 
                      1) SOLES A DÓLARES
@@ -11,20 +12,22 @@ while (respuesta == "SI"):
 
     if (tipo == 1):
         print ("======= CONVERSOR DE SOLES (PEN) A DÓLARES (USD) =========")
-        print (""" El tipo de cambio es 1 USD =  3.6 PEN"""
-           
-           )
+        print (f"El tipo de cambio de venta es 1 USD = {TC_VENTA} soles")
+        print("""
+              
+              """)
         monto = int (input("INGRESE EL MONTO EN SOLES:  "))
-        resultado = round(monto*TC,2)
-        print (f"{monto} soles equivalen a {resultado} dólares ")
+        resultado = round(monto/TC_VENTA,2)
+        print (f"Te damos {resultado} dólares por tus {monto} soles ")
     elif (tipo == 2):
         print ("======= CONVERSOR DE DÓLARES (USD) A SOLES (PEN) =========")
-        print (""" El tipo de cambio es 1 PEN = 0.28 USD"""
-            
-            )
+        print (f"El tipo de cambio de compra es 1 USD = {TC_COMPRA} soles")
+        print("""
+              
+              """)        
         monto = int (input("INGRESE EL MONTO EN DÓLARES:  "))
-        resultado = round(monto*TC,2)
-        print (f"{monto} dólares equivalen a {resultado} soles ")
+        resultado = round(monto*TC_COMPRA,2)
+        print (f"Te damos {resultado} soles por tus {monto} dólares  ")
     else: 
         print ("Esta opción no existe")
 
