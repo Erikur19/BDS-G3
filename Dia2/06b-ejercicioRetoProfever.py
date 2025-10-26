@@ -13,7 +13,6 @@ while (respuesta == True):
            ========================================================
                             CONVERSOR DE DIVISAS                    
            ========================================================
-           
            [1] CONVERTIR SOLES A DÓLARES
            [2] CONVERTIR DÓLARES A SOLES
            [3] SALIR                                                """)
@@ -51,5 +50,6 @@ while (respuesta == True):
         print ("""=======================================================
                             LA OPERACIÓN NO EXISTE                      
                 =========================================================== """)
+        
     sleep (3)
     os.system ("clear")
