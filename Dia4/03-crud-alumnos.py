@@ -38,5 +38,6 @@ while (opcion < 5):
     elif opcion == 5:
         salir ()
     else:
-        invalido()
+        mostrar_mensaje ("¡OPCIÓN NO VÁLIDA!")
+        
     sleep (1)
