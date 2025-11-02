@@ -1,3 +1,4 @@
+##Previamente en git debí poner pip install Pillow para instalar la librería
 from PIL import Image, ImageFont, ImageDraw
 
 image = Image.open('Chrollo.jpg')
