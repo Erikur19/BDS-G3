@@ -1,4 +1,5 @@
 from tabulate import tabulate
+from colorama import Fore, Back, Style
 
 ANCHO = 50
 TABLE_STYLE = "rounded_grid"
@@ -23,7 +24,7 @@ def cargar_alumnos (file_name):
 
 
 def mostrar_mensaje (texto):
-    data = [[texto]]
+    data = [[f'{Fore.GREEN}{texto}{Style.RESET_ALL}']]
     tabla = tabulate (data,tablefmt=TABLE_STYLE, stralign = 'center' )
     print (tabla)
     
@@ -36,13 +37,13 @@ def mostrar_mensaje (texto):
 
 def menu ():
     data = [
-            ["[1] REGISTRAR ALUMNO"],
-            ["[2] MOSTRAR ALUMNO"],
-            ["[3] ACTUALIZAR ALUMNO"],
-            ["[4] ELIMINAR ALUMNO]"],
-            ["[5] SALIR"]
+            [f'{Fore.GREEN}[1] REGISTRAR ALUMNO {Style.RESET_ALL}'],
+            [f'{Fore.GREEN}[2] MOSTRAR ALUMNO {Style.RESET_ALL}'],
+            [f'{Fore.GREEN}[3] ACTUALIZAR ALUMNO {Style.RESET_ALL}'],
+            [f'{Fore.GREEN}[4] ELIMINAR ALUMNO] {Style.RESET_ALL}'],
+            [f'{Fore.GREEN}[5] SALIR {Style.RESET_ALL}']
     ]
-    tabla = tabulate (data, headers = ["GESTIÓN DE ALUMNOS"], tablefmt= TABLE_STYLE, stralign= 'left')
+    tabla = tabulate (data, headers = [f"{Fore.BLUE} GESTIÓN DE ALUMNOS {Style.RESET_ALL}"], tablefmt= TABLE_STYLE, stralign= 'left')
     print (tabla)
 
 
