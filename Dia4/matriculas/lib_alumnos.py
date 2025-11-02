@@ -1,5 +1,23 @@
-
 ANCHO = 50
+dic_alumnos = {}
+
+def cargar_alumnos (file_name):
+    file = open (file_name, 'r')
+    str_alumnos = file.read ()
+    file.close ()
+    lista_general = str_alumnos.splitlines ()
+
+    for fila in lista_general:
+        fila_alumno = fila.split (',')
+        dic_fila = {
+            'nombre': fila_alumno[1],
+            'email' : fila_alumno [2]
+        }
+        dic_alumno_nuevo = {
+                fila_alumno[0]: dic_fila
+                }
+        dic_alumnos.update (dic_alumno_nuevo)
+
 
 def mostrar_mensaje (texto):
     print ("="*ANCHO)
@@ -61,8 +79,11 @@ def actualizar (dic_alumnos):
                     }
         }
         dic_alumnos.update (dic_act_alumno)
-    mostrar_mensaje(" ")
-    return dic_act_alumno
+        mostrar_mensaje(" ")
+    else:
+            mostrar_mensaje ("NO EXISTE EL ALUMNO A ACTUALIZAR")
+    return dic_alumnos
+            
 
 
 def eliminar (dic_alumnos):
@@ -81,6 +102,22 @@ def eliminar (dic_alumnos):
     else:
             print ("NO EXISTE EL ALUMNO QUE SE DESEA ACTUALIZAR")
     mostrar_mensaje(" ")
+
+def grabar (file_name):
+    str_alumnos = ""
+    contador = 0
+    for clave, valor in dic_alumnos.items():
+        if contador > 0:
+                str_alumnos += '\n'
+        str_alumnos += clave
+        for valor_alumno in valor.values():
+                str_alumnos += ","
+                str_alumnos += valor_alumno
+        contador += 1
+        # str_alumnos += '\n'
+    f_alumnos_act = open(file_name, 'w')
+    f_alumnos_act.write(str_alumnos)
+    f_alumnos_act.close()
 
 def salir ():
     mostrar_mensaje ("SALIENDO DEL PROGRAMA")

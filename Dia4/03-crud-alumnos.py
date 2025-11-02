@@ -3,24 +3,9 @@ from time import sleep
 from matriculas.lib_alumnos import *
 
 
-dic_alumnos = {
-    '12345678': {
-        'nombre' : 'CESAR',
-        'email' : 'cesar@gmail.com'
-        },
-    '11223344' : {
-        'nombre':  'PEPITO',
-        'email' : 'pepe@gmail.com'
-    },
-    '22557788': {
-        'nombre':  'JUANITO',
-        'email' : 'juan@gmail.com'
-    }
-}
-
-
-
+cargar_alumnos('alumnos.txt')
 opcion = 0
+
 
 while (opcion < 5):
     os.system ("clear")
@@ -36,6 +21,7 @@ while (opcion < 5):
     elif opcion == 4:
         eliminar (dic_alumnos)           
     elif opcion == 5:
+        grabar ('alumnos.txt')
         salir ()
     else:
         mostrar_mensaje ("¡OPCIÓN NO VÁLIDA!")
